@@ -48,7 +48,7 @@ Errors ≤ 1e-8 are set to zero. `docs/SCREEN_LOG.md` is the screening log writt
 
 ## Results
 
-* `results/cec14/` — final errors on the held-out suite: `py_d{D}.json` rows `[function, algorithm, run, error]` for DRXO-U (DRXO), DRX-off and SR-skel; `lsrtde_d{D}.json`, `rde_d{D}.json`, `jso_d{D}.json` rows `[function, run, error]`; `traces_d50.json` convergence traces. L-SHADE values are the official CEC 2014 results and are not redistributed.
+* `results/cec14/` — final errors on the held-out suite: `py_d{D}.json` rows `[function, algorithm, run, error]` for DRXO-U (DRXO), DRX-off and SR-skel; `l-srtde_d{D}.json`, `rde_d{D}.json`, `jso_d{D}.json` rows `[function, run, error]`; `traces_d50.json` convergence traces. L-SHADE values are the official CEC 2014 results and are not redistributed.
 * `results/cec2020/res_rw20.json` — rows `[problem, algorithm, run, best feasible f, violation, evaluations]`. Official competition results of the CEC 2020 entrants are available from the organisers.
 * `results/design/` — CEC 2017 and CEC 2022 runs of every screened, ablation, sensitivity and factorial variant, rows `[function, variant, run, error, ...]`.
 * `results/diagnostics/` — instrumented runs (nucleation counts, acceptance, diversity), the F29 failure trace, the complexity measurement and the post-hoc late-switch runs (`posthoc_c14_d*.json`). The post-hoc rank-energy runs on CEC 2020 are in `results/cec2020/posthoc_rw.json`. The factorial variants (`F_sr_*`, `F_dx_*`, `srskel`) are in `results/design/res_cec17_d30.json` and `res_cec17_d50.json`.

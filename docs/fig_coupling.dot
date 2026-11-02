@@ -1,0 +1,24 @@
+digraph G {
+  rankdir=TB; nodesep=0.35; ranksep=0.45; bgcolor="white";
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, color="#555555", fillcolor="#F2F2F2", penwidth=1.0];
+  edge [fontname="Helvetica", fontsize=9.5, color="#444444", arrowsize=0.7];
+  pass  [label="Pass t:\nmigration, crossover,\nevaluation", fillcolor="#FFFFFF"];
+  SR    [label="Released energy\nSR = fraction of\nimproved grains"];
+  s     [label="Thermal state\ns = SR\nθ = 0.1 + 0.9 s", fillcolor="#DCE9F5", color="#2C5F8A", penwidth=1.4];
+  M     [label=<Boundary mobility (scale factor)<BR/>μ<SUB>M</SUB> = 0.65 exp[−0.054(1/θ − 1)]>];
+  z     [label="Zener–Hollomon factor\nz = exp[0.3(1/θ − 1)]"];
+  ec    [label=<Critical strain<BR/>ε<SUB>c</SUB> = 6 z<SUP>0.5</SUP>>];
+  d     [label=<Nucleus size<BR/>d = 0.2 z<SUP>−0.5</SUP> · 2σ>];
+  E     [label="Stored energy E\n(normalised objective)"];
+  drv   [label=<Driving force<BR/>δ = 0.5[1 + max(E<SUB>i</SUB> − E<SUB>g</SUB>, 0)]>];
+  st    [label="Strain ε\nhardening / recovery"];
+  nuc   [label="Nucleation\n(Read–Shockley partner)"];
+  acc   [label="Grain consumption:\naccepted trials replace\nthe oldest grains"];
+  next  [label="Pass t + 1", fillcolor="#FFFFFF"];
+  pass -> SR; SR -> s; s -> M; s -> z; z -> ec; z -> d;
+  pass -> acc; pass -> st [label="failed trials"];
+  E -> drv; E -> st;
+  st -> nuc [label=<ε ≥ ε<SUB>c</SUB>>]; ec -> nuc; d -> nuc;
+  M -> next; drv -> next; acc -> next; nuc -> next;
+  {rank=same; SR; E;}
+}

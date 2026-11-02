@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article."
+title: "DRXO: Dynamic Recrystallization Optimizer"
+authors:
+  - family-names: "Prithvi Raj"
+    given-names: "Mathala"
+    affiliation: "Anil Neerukonda Institute of Technology & Sciences (ANITS), Visakhapatnam, India"
+license: MIT
+version: "1.0.0"
